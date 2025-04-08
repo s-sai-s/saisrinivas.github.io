@@ -1,0 +1,160 @@
+:root {
+    /* Primary Colors */
+    --accent-color: hsl(200, 100%, 55%);
+    --accent-dark: hsl(200, 99%, 32%);
+    --accent-light: hsl(200, 100%, 70%);
+    --background: hsl(0, 0%, 7%);
+    --text: hsl(0, 0%, 84%);
+    --white: hsl(0, 0%, 100%);
+    --white-2: hsl(0, 0%, 98%);
+    --jet: hsl(0, 0%, 22%);
+    --onyx: hsl(240, 1%, 17%);
+
+    /* Typography */
+    --font-family: 'Poppins', sans-serif;
+    --fs-1: 24px;
+    --fs-2: 18px;
+    --fs-3: 17px;
+    --fs-4: 16px;
+    --fs-5: 15px;
+    --fs-6: 14px;
+    --fs-7: 13px;
+    --fs-8: 11px;
+
+    /* Transitions */
+    --transition-1: 0.25s ease;
+    --transition-2: 0.5s ease-in-out;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.maintenance-container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.maintenance-card {
+    background: linear-gradient(to bottom right, hsl(240, 1%, 25%) 3%, hsl(0, 0%, 19%) 97%);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px hsla(0, 0%, 0%, 0.25);
+    text-align: center;
+}
+
+.maintenance-icon {
+    color: var(--accent-color);
+    margin-bottom: 24px;
+}
+
+.maintenance-icon svg {
+    width: 64px;
+    height: 64px;
+}
+
+.maintenance-title {
+    font-size: var(--fs-1);
+    font-weight: 600;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, var(--accent-color), var(--accent-light));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.maintenance-message {
+    font-size: var(--fs-4);
+    font-weight: 400;
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.maintenance-progress {
+    margin-bottom: 32px;
+}
+
+.progress-bar {
+    background: var(--jet);
+    height: 8px;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(to right, var(--accent-color), var(--accent-light));
+    height: 100%;
+    width: 0%;
+    transition: width var(--transition-2);
+    animation: progress-animation 2s ease-in-out infinite;
+}
+
+.progress-text {
+    font-size: var(--fs-6);
+    color: var(--text);
+}
+
+.countdown {
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.maintenance-contact {
+    margin-top: 24px;
+}
+
+.maintenance-contact p {
+    font-size: var(--fs-5);
+    margin-bottom: 12px;
+}
+
+.contact-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color var(--transition-1);
+}
+
+.contact-link:hover {
+    color: var(--white-2);
+}
+
+@keyframes progress-animation {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@media (max-width: 480px) {
+    .maintenance-card {
+        padding: 30px 20px;
+    }
+    
+    .maintenance-title {
+        font-size: var(--fs-2);
+    }
+    
+    .maintenance-message {
+        font-size: var(--fs-5);
+    }
+} 
